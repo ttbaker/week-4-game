@@ -15,7 +15,10 @@
 			<div class="col-md-12">
 				<div class="jumbotron">
 					<h1>Crystalised</h1>
-					<p>...</p>
+
+					<button class="btn btn-warning btn-xs theme-button"><span class="theXx"></span> Play Theme!</button>
+					<button class="btn btn-default btn-xs pause-button"><span class="theXx"></span> Pause Song</button>
+
 				</div>
 			</div>
 		</div>
@@ -37,18 +40,16 @@
 			<div class="col-md-3">
 				<div>
 					<div class="panel panel-default">
-						<div class="panel-body" id="targetValue">
-							Target:
+						<div class="panel-body">
+							<h3>Number to Guess: <span id="number-to-guess"></span></h3>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="panel panel-default">
-					<div class="panel-body">
-						Wins:<br>
-						Losses:
-					</div>
+					<div class="panel-body winner">Wins:</div>
+					<div class="panel-body loser">Losses:</div>
 				</div>
 			</div>
 		</div>
@@ -61,9 +62,10 @@
 							<img class="btn1" src="assets/images/gem1.png" alt="gem1">
 						</button>
 
-						<button class="gem-button"><img src="#" alt="gem2"></button>
+						<!-- <button class="gem-button"><img src="#" alt="gem2"></button>
 						<button class="gem-button"><img src="#" alt="gem3"></button>
-						<button class="gem-button"><img src="#" alt="gem4"></button>
+						<button class="gem-button"><img src="#" alt="gem4"></button> -->
+
 					</div>
 				</div>
 			</div>
@@ -82,24 +84,76 @@
 
 	</div>
 
+	<!-- Javascript / jQuery -->
+
+
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<script type="text/javascript">
-		var counter = 0;
-		var min = 1;
-		var max = 12;
-		var targetNumber = 18;
 
-		$("#targetValue").text("Target" + " " + targetNumber);
+		$(document).ready(function() {
+		
+			var audioElement = document.createElement("audio");
+     		audioElement.setAttribute("src", "assets/crystalised.mp3");
 
-		$(".btn1").on("click", function() {
-			counter += Math.floor(Math.random()*(max-min+1)+min);
-			$( ".score" ).append(counter);
+      		$(".theme-button").on("click", function() {
+        	audioElement.play();
+      		});
 
+      		$(".pause-button").on("click", function() {
+        	audioElement.pause();
+      		});
+
+			// var targetNumber = Math.round(Math.random());
+			var targetNumber = 55;
+			$("#number-to-guess").text(targetNumber);
+
+			var counter = 0;
+
+			var numberOptions = [10, 11];
+			var increment = numberOptions[Math.round(Math.random())];
+
+			$(".btn1").on("click", function() {
+				counter += increment;
+
+				$( ".score" ).html(counter);
+
+				if (counter === targetNumber) {
+					alert("You win!");
+					$(".winner").text("Wins:" + " " + 1);
+				}
+
+				else if (counter >= targetNumber) {
+					alert("You lose!!");
+					$(".loser").text("Losses:" + " " + 1);
+				}
+
+			});
+
+			// var targetNumber = 18;
+			// var counter = 0;
+
+			// $("#targetValue").text("Target Score:" + " " + targetNumber);
+
+
+			// $(".btn1").on("click", function() {
+
+			// 	counter += 3;
+			// 	$( ".score" ).html(counter);
+
+			// 	if (counter === targetNumber) {
+			// 		alert("You win!");
+			// 	}
+
+			// 	else if (counter >= targetNumber) {
+			// 		alert("You lose!!");
+			// 		$(".loser").text("Losses:" + " " + 1);
+			// 	}
+
+
+			// });
 		});
-
-
-
 	</script>
+
 </body>
 </html>
