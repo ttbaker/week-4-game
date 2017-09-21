@@ -1,0 +1,11 @@
+body {
+	background-image: url("../images/colorful-traingles-image.jpg");
+	background-size: cover;
+}
+
+.gem-button {
+	background-color: white;
+	border: none;
+}
+
+/*color palette: http://www.color-hex.com/color-palette/45872 */

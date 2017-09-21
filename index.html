@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystalised</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	
+	<!-- jQuery CDN link? -->
+</head>
+
+<body>
+	<div class=container id="background">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="jumbotron">
+					<h1>Crystalised</h1>
+					<p>...</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Instructions</h3>
+					</div>
+					<div class="panel-body">
+						Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div>
+					<div class="panel panel-default">
+						<div class="panel-body" id="currentValue">
+							Current Value
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						Wins:<br>
+						Losses:
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<button class="gem-button"> <img src="assets/images/gem1.png" alt="gem1"></button>
+						<button class="gem-button"><img src="#" alt="gem2"></button>
+						<button class="gem-button"><img src="#" alt="gem3"></button>
+						<button class="gem-button"><img src="#" alt="gem4"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						Your score:
+					</div>
+					<div>
+						#
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		
+		function targetNumber() {
+			var randomNumber = Math.floor(Math.random() * 102 + 19);
+			console.log(randomNumber);
+
+			$(randomNumber).on("click" function("targetNumber"))
+		}
+
+
+
+
+	</script>
+</body>
+</html>
