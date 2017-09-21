@@ -104,12 +104,20 @@
         	audioElement.pause();
       		});
 
-			// var targetNumber = Math.round(Math.random());
-			var targetNumber = 55;
+      		var targetNumber = Math.floor((Math.random() * 102) +19);
 			$("#number-to-guess").text(targetNumber);
 
-			var counter = 0;
+			// // var range = [];
+			// // 	console.log(range);
+			// 	for (var i = 0; i < 50; i++) {
+			// 		var targetNumber = Math.floor((Math.random() * 102) +19);
+			// 		range.push(targetNumber);
+			// 		console.log(range);
+			// 	};
 
+			var counter = 0;
+			var losses = 1;
+			var wins = 1;
 			var numberOptions = [10, 11];
 			var increment = numberOptions[Math.round(Math.random())];
 
@@ -119,16 +127,26 @@
 				$( ".score" ).html(counter);
 
 				if (counter === targetNumber) {
-					alert("You win!");
-					$(".winner").text("Wins:" + " " + 1);
+					alert("You win!"); 
+					$(".winner").text("Wins:" + " " + wins++);
+					targetNumber = Math.floor((Math.random() * 102) +19);
+					$("#number-to-guess").text(targetNumber);
+					counter = 0;
+					$(".score").html(counter);
 				}
 
-				else if (counter >= targetNumber) {
+				else if (counter > targetNumber) {
 					alert("You lose!!");
-					$(".loser").text("Losses:" + " " + 1);
+					$(".loser").text("Losses:" + " " + losses++);
+					targetNumber = Math.floor((Math.random() * 102) +19);
+					$("#number-to-guess").text(targetNumber);
+					counter = 0;
+					$(".score").html(counter);
 				}
 
 			});
+
+			// after a win/loss; reset targetNumber & counter
 
 			// var targetNumber = 18;
 			// var counter = 0;
