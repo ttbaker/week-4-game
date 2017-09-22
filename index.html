@@ -58,12 +58,14 @@
 			<div class="col-md-6">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<button class="gem-button1"> 
-							<img class="btn1" src="assets/images/gem1.png" alt="gem1">
+						<button class="gem-button"> 
+							<img src="assets/images/gem1.png" alt="gem1">
 						</button>
 
-						<!-- <button class="gem-button"><img src="#" alt="gem2"></button>
-						<button class="gem-button"><img src="#" alt="gem3"></button>
+						<!-- <button class="gem-button">
+							<img src="assets/images/gem1.png" alt="gem2">
+						</button> -->
+						<!-- <button class="gem-button"><img src="#" alt="gem3"></button>
 						<button class="gem-button"><img src="#" alt="gem4"></button> -->
 
 					</div>
@@ -111,8 +113,9 @@
 			var losses = 1;
 			var wins = 1;
 			var increment = Math.floor((Math.random() * 14) +1);
+			var test = []
 
-			$(".btn1").on("click", function() {
+			$(".gem-button").on("click", function() {
 				counter += increment;
 
 				$( ".score" ).html(counter);
