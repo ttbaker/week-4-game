@@ -118,8 +118,9 @@
 			var counter = 0;
 			var losses = 1;
 			var wins = 1;
-			var numberOptions = [10, 11];
-			var increment = numberOptions[Math.round(Math.random())];
+			var increment = Math.floor((Math.random() * 14) +1);
+			// console.log(numberOptions)
+			// var increment = numberOptions[Math.round(Math.random())];
 
 			$(".btn1").on("click", function() {
 				counter += increment;
@@ -146,30 +147,6 @@
 
 			});
 
-			// after a win/loss; reset targetNumber & counter
-
-			// var targetNumber = 18;
-			// var counter = 0;
-
-			// $("#targetValue").text("Target Score:" + " " + targetNumber);
-
-
-			// $(".btn1").on("click", function() {
-
-			// 	counter += 3;
-			// 	$( ".score" ).html(counter);
-
-			// 	if (counter === targetNumber) {
-			// 		alert("You win!");
-			// 	}
-
-			// 	else if (counter >= targetNumber) {
-			// 		alert("You lose!!");
-			// 		$(".loser").text("Losses:" + " " + 1);
-			// 	}
-
-
-			// });
 		});
 	</script>
 
